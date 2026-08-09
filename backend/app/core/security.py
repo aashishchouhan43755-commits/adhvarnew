@@ -1,3 +1,4 @@
+import hashlib
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
@@ -9,15 +10,24 @@ from app.core.config import settings
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
+def _prepare_password(password: str) -> str:
+    """Ensure password string never exceeds bcrypt's 72-byte limit."""
+    b = password.encode("utf-8")
+    if len(b) > 72:
+        return b[:72].decode("utf-8", errors="ignore")
+    return password
+
+
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    # Safely truncate to 72 bytes to prevent bcrypt 72-byte exception
-    safe_pwd = plain_password[:72]
-    return pwd_context.verify(safe_pwd, hashed_password)
+    safe_pwd = _prepare_password(plain_password)
+    try:
+        return pwd_context.verify(safe_pwd, hashed_password)
+    except Exception:
+        return False
 
 
 def get_password_hash(password: str) -> str:
-    # Safely truncate to 72 bytes to prevent bcrypt 72-byte exception
-    safe_pwd = password[:72]
+    safe_pwd = _prepare_password(password)
     return pwd_context.hash(safe_pwd)
 
 
