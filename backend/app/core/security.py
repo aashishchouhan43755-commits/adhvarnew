@@ -7,28 +7,36 @@ from passlib.context import CryptContext
 
 from app.core.config import settings
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Passlib context configured to disable strict 72-byte error throw
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto",
+    bcrypt__truncate_error=False,
+)
 
 
-def _prepare_password(password: str) -> str:
-    """Ensure password string never exceeds bcrypt's 72-byte limit."""
-    b = password.encode("utf-8")
-    if len(b) > 72:
-        return b[:72].decode("utf-8", errors="ignore")
-    return password
+def _hash_password_input(password: str) -> str:
+    """Consistently SHA256 pre-hash password to a fixed 64-char string.
+    Guarantees it never exceeds bcrypt's 72-byte limit on any platform.
+    """
+    return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    safe_pwd = _prepare_password(plain_password)
+    prepared = _hash_password_input(plain_password)
     try:
-        return pwd_context.verify(safe_pwd, hashed_password)
+        return pwd_context.verify(prepared, hashed_password)
     except Exception:
-        return False
+        # Fallback check for raw plain password if previously stored
+        try:
+            return pwd_context.verify(plain_password[:72], hashed_password)
+        except Exception:
+            return False
 
 
 def get_password_hash(password: str) -> str:
-    safe_pwd = _prepare_password(password)
-    return pwd_context.hash(safe_pwd)
+    prepared = _hash_password_input(password)
+    return pwd_context.hash(prepared)
 
 
 def create_access_token(subject: Any, expires_delta: timedelta | None = None) -> str:
