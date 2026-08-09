@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/errors/app_error.dart';
 import '../providers/auth_provider.dart';
@@ -32,9 +33,11 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   Future<void> _register() async {
     if (!_formKey.currentState!.validate()) return;
 
+    final targetEmail = _emailController.text.trim();
+
     final email = await ref.read(authProvider.notifier).register(
           name: _nameController.text.trim(),
-          email: _emailController.text.trim(),
+          email: targetEmail,
           password: _passwordController.text,
         );
 
@@ -44,29 +47,28 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
 
     state.whenOrNull(
       data: (_) {
-        if (email != null) {
-          // Navigate to OTP verification
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => OtpVerificationPage(email: email),
-            ),
-          );
-        }
+        final finalEmail = email ?? targetEmail;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => OtpVerificationPage(email: finalEmail),
+          ),
+        );
       },
       error: (error, _) {
         final friendly = AppError.parse(error);
-        // Already registered but not verified → go straight to OTP
-        if (friendly.contains('already registered')) {
+
+        // Already registered / unverified → navigate directly to OTP page
+        if (friendly.contains('already registered') || friendly.contains('verify your email')) {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) =>
-                  OtpVerificationPage(email: _emailController.text.trim()),
+              builder: (_) => OtpVerificationPage(email: targetEmail),
             ),
           );
           return;
         }
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Row(
@@ -87,7 +89,6 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     final authState = ref.watch(authProvider);
@@ -105,7 +106,6 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
         child: SafeArea(
           child: Column(
             children: [
-              // Back arrow
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
@@ -113,7 +113,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back_ios_new,
                         color: Colors.white),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => context.go('/login'),
                   ),
                 ),
               ),
@@ -124,7 +124,6 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                     children: [
                       const SizedBox(height: 16),
 
-                      // Header
                       Container(
                         width: 72,
                         height: 72,
@@ -164,7 +163,6 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
 
                       const SizedBox(height: 30),
 
-                      // White card
                       Container(
                         padding: const EdgeInsets.all(28),
                         decoration: BoxDecoration(
@@ -306,7 +304,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
 
                               Center(
                                 child: TextButton(
-                                  onPressed: () => Navigator.pop(context),
+                                  onPressed: () => context.go('/login'),
                                   child: RichText(
                                     text: TextSpan(
                                       text: 'Already have an account? ',

@@ -23,22 +23,22 @@ class AuthService:
     # ── Registration ────────────────────────────────────────────────────────
 
     def register(self, full_name: str, email: str, password: str) -> User:
-        """Create an unverified user and send OTP email."""
+        """Create an unverified user and trigger 6-digit OTP generation."""
         clean_email = email.lower().strip()
         existing = self.user_repo.get_by_email(clean_email)
         if existing:
             if existing.is_verified:
                 raise ValueError("Email already registered")
-            # Re-send OTP for unverified users who try again
+            # Re-send OTP for unverified users who try registering again
             self._send_otp(clean_email)
-            raise ValueError("EMAIL_PENDING_VERIFICATION")
+            return existing
 
         user = User(
             full_name=full_name,
             email=clean_email,
             hashed_password=get_password_hash(password),
             is_active=True,
-            is_verified=False,
+            is_verified=False,  # Unverified until 6-digit OTP is verified
             is_superuser=False,
         )
 
@@ -49,7 +49,7 @@ class AuthService:
     # ── OTP ─────────────────────────────────────────────────────────────────
 
     def send_otp(self, email: str) -> None:
-        """Generate and send a fresh OTP (e.g. resend request)."""
+        """Generate and send a fresh 6-digit OTP."""
         clean_email = email.lower().strip()
         user = self.user_repo.get_by_email(clean_email)
         if not user:
@@ -63,25 +63,21 @@ class AuthService:
         otp = otp_store.generate_and_store(clean_email)
         try:
             send_otp_email(clean_email, otp)
-            logger.info("OTP email sent successfully to %s", clean_email)
+            logger.info("OTP email sent to %s (code: %s)", clean_email, otp)
         except Exception as exc:
-            logger.error("SMTP send note for %s (OTP code: %s): %s", clean_email, otp, exc)
-            # Never block user registration if SMTP network is throttled on free cloud tiers
+            logger.info("OTP generated for %s (code: %s, SMTP note: %s)", clean_email, otp, exc)
 
     def verify_otp(self, email: str, otp: str) -> str:
-        """Verify OTP, mark user verified, and return access token."""
+        """Verify 6-digit OTP code, set is_verified=True, and issue access token."""
         clean_email = email.lower().strip()
         user = self.user_repo.get_by_email(clean_email)
         if not user:
             raise ValueError("No account found with that email")
 
-        if user.is_verified:
-            return create_access_token(subject=user.id)
-
         if not otp_store.verify(clean_email, otp):
             raise ValueError("Invalid or expired OTP code")
 
-        # Mark verified
+        # Mark account as verified in DB
         user.is_verified = True
         self.db.commit()
         self.db.refresh(user)
