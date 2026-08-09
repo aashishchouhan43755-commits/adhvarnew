@@ -1,0 +1,235 @@
+<svg viewBox="0 0 1410 910" xmlns="http://www.w3.org/2000/svg" font-family="Inter,'Segoe UI',Arial,sans-serif">
+
+<!-- ══ PAGE BACKGROUND ══════════════════════════════════════════════════ -->
+<rect width="1410" height="910" fill="#C8D4E0"/>
+
+<!-- ══ BUILDING SHELL ═══════════════════════════════════════════════════ -->
+<rect x="55" y="45" width="1300" height="830" rx="6" fill="#EDF3FA" stroke="#1A2535" stroke-width="5"/>
+
+<!-- ══ CORRIDOR FILLS ════════════════════════════════════════════════════ -->
+<rect x="55"  y="285" width="1300" height="30" fill="#B0C4D8"/>
+<rect x="55"  y="510" width="1300" height="30" fill="#B0C4D8"/>
+<rect x="55"  y="735" width="1300" height="30" fill="#B0C4D8"/>
+<rect x="315" y="285" width="30"  height="480" fill="#B0C4D8"/>
+<rect x="690" y="285" width="30"  height="480" fill="#B0C4D8"/>
+<rect x="1065" y="285" width="30" height="480" fill="#B0C4D8"/>
+
+<!-- ══ CORRIDOR WALL LINES ═══════════════════════════════════════════════ -->
+<line x1="55"   y1="285" x2="1355" y2="285" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="55"   y1="315" x2="1355" y2="315" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="55"   y1="510" x2="1355" y2="510" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="55"   y1="540" x2="1355" y2="540" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="55"   y1="735" x2="1355" y2="735" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="55"   y1="765" x2="1355" y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="315"  y1="285" x2="315"  y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="345"  y1="285" x2="345"  y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="690"  y1="285" x2="690"  y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="720"  y1="285" x2="720"  y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="1065" y1="285" x2="1065" y2="765" stroke="#8098B4" stroke-width="1.2"/>
+<line x1="1095" y1="285" x2="1095" y2="765" stroke="#8098B4" stroke-width="1.2"/>
+
+<!-- ══ STRUCTURAL PILLARS ════════════════════════════════════════════════ -->
+<rect x="317" y="287" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="692" y="287" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="1067" y="287" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="317" y="512" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="692" y="512" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="1067" y="512" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="317" y="737" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="692" y="737" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+<rect x="1067" y="737" width="26" height="26" rx="3" fill="#7A9AB8" stroke="#5A7A98" stroke-width="1"/>
+
+<!-- ══ CORRIDOR GUIDE LINES ═══════════════════════════════════════════════ -->
+<line x1="90"  y1="300" x2="1320" y2="300" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+<line x1="90"  y1="525" x2="1320" y2="525" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+<line x1="90"  y1="750" x2="1320" y2="750" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+<line x1="330" y1="315" x2="330"  y2="735" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+<line x1="705" y1="315" x2="705"  y2="735" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+<line x1="1080" y1="315" x2="1080" y2="735" stroke="#90A8C0" stroke-width="0.8" stroke-dasharray="10,6"/>
+
+<!-- ══ CORRIDOR LABELS ═══════════════════════════════════════════════════ -->
+<text x="530" y="302" font-size="8.5" fill="#5A7090" text-anchor="middle" font-weight="700" letter-spacing="1.5">UPPER CORRIDOR</text>
+<text x="530" y="527" font-size="8.5" fill="#5A7090" text-anchor="middle" font-weight="700" letter-spacing="1.5">MAIN CORRIDOR</text>
+<text x="530" y="752" font-size="8.5" fill="#5A7090" text-anchor="middle" font-weight="700" letter-spacing="1.5">LOWER CORRIDOR</text>
+
+<!-- ══ LIFT 1 ════════════════════════════════════════════════════════════ -->
+<rect x="110" y="268" width="110" height="64" rx="5" fill="#B3D4FC" stroke="#3E7CB1" stroke-width="2"/>
+<text x="165" y="292" font-size="10" font-weight="700" fill="#0D3B66" text-anchor="middle">LIFT 1</text>
+<text x="165" y="306" font-size="8.5" fill="#1A5894" text-anchor="middle">▲▼</text>
+<text x="165" y="320" font-size="7.5" fill="#1A5894" text-anchor="middle">West Wing</text>
+
+<!-- ══ LIFT 2 ════════════════════════════════════════════════════════════ -->
+<rect x="110" y="718" width="110" height="64" rx="5" fill="#B3D4FC" stroke="#3E7CB1" stroke-width="2"/>
+<text x="165" y="742" font-size="10" font-weight="700" fill="#0D3B66" text-anchor="middle">LIFT 2</text>
+<text x="165" y="756" font-size="8.5" fill="#1A5894" text-anchor="middle">▲▼</text>
+<text x="165" y="770" font-size="7.5" fill="#1A5894" text-anchor="middle">West Wing</text>
+
+<!-- ══ STAIRCASE 1 ═══════════════════════════════════════════════════════ -->
+<rect x="1190" y="268" width="110" height="64" rx="5" fill="#FFCDB2" stroke="#B5563A" stroke-width="2"/>
+<text x="1245" y="292" font-size="9.5" font-weight="700" fill="#7A2E1D" text-anchor="middle">STAIRS 1</text>
+<text x="1245" y="307" font-size="14" fill="#7A2E1D" text-anchor="middle">⌂</text>
+<text x="1245" y="323" font-size="7.5" fill="#7A2E1D" text-anchor="middle">East Wing</text>
+
+<!-- ══ STAIRCASE 2 ═══════════════════════════════════════════════════════ -->
+<rect x="1190" y="718" width="110" height="64" rx="5" fill="#FFCDB2" stroke="#B5563A" stroke-width="2"/>
+<text x="1245" y="742" font-size="9.5" font-weight="700" fill="#7A2E1D" text-anchor="middle">STAIRS 2</text>
+<text x="1245" y="757" font-size="14" fill="#7A2E1D" text-anchor="middle">⌂</text>
+<text x="1245" y="773" font-size="7.5" fill="#7A2E1D" text-anchor="middle">East Wing</text>
+
+<!-- ══ WASHROOMS ═════════════════════════════════════════════════════════ -->
+<rect x="608" y="606" width="74" height="60" rx="4" fill="#C9E4CA" stroke="#4E8B5C" stroke-width="1.5"/>
+<text x="645" y="629" font-size="9" font-weight="700" fill="#274E36" text-anchor="middle">WC</text>
+<text x="645" y="642" font-size="8" fill="#3A6A45" text-anchor="middle">Male</text>
+<text x="645" y="654" font-size="10" fill="#3A6A45" text-anchor="middle">♂</text>
+<rect x="728" y="606" width="74" height="60" rx="4" fill="#C9E4CA" stroke="#4E8B5C" stroke-width="1.5"/>
+<text x="765" y="629" font-size="9" font-weight="700" fill="#274E36" text-anchor="middle">WC</text>
+<text x="765" y="642" font-size="8" fill="#3A6A45" text-anchor="middle">Female</text>
+<text x="765" y="654" font-size="10" fill="#3A6A45" text-anchor="middle">♀</text>
+<line x1="645" y1="606" x2="645" y2="540" stroke="#4E8B5C" stroke-width="1.2" stroke-dasharray="4,3"/>
+<line x1="765" y1="606" x2="765" y2="540" stroke="#4E8B5C" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+<!-- ══ EMERGENCY EXIT ════════════════════════════════════════════════════ -->
+<rect x="1190" y="496" width="110" height="58" rx="4" fill="#F7B2B2" stroke="#B23A3A" stroke-width="2"/>
+<text x="1245" y="519" font-size="9.5" font-weight="800" fill="#7A1F1F" text-anchor="middle">EMERGENCY</text>
+<text x="1245" y="533" font-size="9.5" font-weight="800" fill="#7A1F1F" text-anchor="middle">EXIT ⚠</text>
+<line x1="1190" y1="525" x2="1095" y2="525" stroke="#B23A3A" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- ══ TOP WING ROOMS ════════════════════════════════════════════════════ -->
+
+<!-- 101 Conference Room A  (node 90,30 → canvas 330,150) -->
+<rect x="275" y="90" width="110" height="110" rx="5" fill="#C4F0D4" stroke="#3A8A5A" stroke-width="1.8"/>
+<rect x="275" y="90" width="110" height="22" rx="5" fill="#3A8A5A"/>
+<text x="330" y="106" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">101</text>
+<text x="330" y="135" font-size="9.5" font-weight="600" fill="#1A5A30" text-anchor="middle">Conference</text>
+<text x="330" y="150" font-size="9.5" font-weight="600" fill="#1A5A30" text-anchor="middle">Room A</text>
+<line x1="308" y1="200" x2="352" y2="200" stroke="#3A8A5A" stroke-width="1.5"/>
+<path d="M 308 200 Q 308 178 330 178" fill="none" stroke="#3A8A5A" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="330" y1="200" x2="330" y2="285" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 102 Conference Room B  (node 160,30 → canvas 540,150) -->
+<rect x="485" y="90" width="110" height="110" rx="5" fill="#C4F0D4" stroke="#3A8A5A" stroke-width="1.8"/>
+<rect x="485" y="90" width="110" height="22" rx="5" fill="#3A8A5A"/>
+<text x="540" y="106" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">102</text>
+<text x="540" y="135" font-size="9.5" font-weight="600" fill="#1A5A30" text-anchor="middle">Conference</text>
+<text x="540" y="150" font-size="9.5" font-weight="600" fill="#1A5A30" text-anchor="middle">Room B</text>
+<line x1="518" y1="200" x2="562" y2="200" stroke="#3A8A5A" stroke-width="1.5"/>
+<path d="M 518 200 Q 518 178 540 178" fill="none" stroke="#3A8A5A" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="540" y1="200" x2="540" y2="285" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 103 Manager Cabin 1  (node 215,30 → canvas 705,150) -->
+<rect x="650" y="90" width="110" height="110" rx="5" fill="#C4DCF5" stroke="#4A78B8" stroke-width="1.8"/>
+<rect x="650" y="90" width="110" height="22" rx="5" fill="#4A78B8"/>
+<text x="705" y="106" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">103</text>
+<text x="705" y="135" font-size="9.5" font-weight="600" fill="#1A4A80" text-anchor="middle">Manager</text>
+<text x="705" y="150" font-size="9.5" font-weight="600" fill="#1A4A80" text-anchor="middle">Cabin 1</text>
+<line x1="683" y1="200" x2="727" y2="200" stroke="#4A78B8" stroke-width="1.5"/>
+<path d="M 683 200 Q 683 178 705 178" fill="none" stroke="#4A78B8" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="705" y1="200" x2="705" y2="285" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 104 Manager Cabin 2  (node 270,30 → canvas 870,150) -->
+<rect x="815" y="90" width="110" height="110" rx="5" fill="#C4DCF5" stroke="#4A78B8" stroke-width="1.8"/>
+<rect x="815" y="90" width="110" height="22" rx="5" fill="#4A78B8"/>
+<text x="870" y="106" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">104</text>
+<text x="870" y="135" font-size="9.5" font-weight="600" fill="#1A4A80" text-anchor="middle">Manager</text>
+<text x="870" y="150" font-size="9.5" font-weight="600" fill="#1A4A80" text-anchor="middle">Cabin 2</text>
+<line x1="848" y1="200" x2="892" y2="200" stroke="#4A78B8" stroke-width="1.5"/>
+<path d="M 848 200 Q 848 178 870 178" fill="none" stroke="#4A78B8" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="870" y1="200" x2="870" y2="285" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 105 HR Office  (node 340,30 → canvas 1080,150) -->
+<rect x="1025" y="90" width="110" height="110" rx="5" fill="#C4DCF5" stroke="#4A78B8" stroke-width="1.8"/>
+<rect x="1025" y="90" width="110" height="22" rx="5" fill="#4A78B8"/>
+<text x="1080" y="106" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">105</text>
+<text x="1080" y="135" font-size="10" font-weight="600" fill="#1A4A80" text-anchor="middle">HR Office</text>
+<text x="1080" y="152" font-size="8.5" fill="#2A5A90" text-anchor="middle">Human Resources</text>
+<line x1="1058" y1="200" x2="1102" y2="200" stroke="#4A78B8" stroke-width="1.5"/>
+<path d="M 1058 200 Q 1058 178 1080 178" fill="none" stroke="#4A78B8" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1080" y1="200" x2="1080" y2="285" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- ══ BOTTOM WING ROOMS ══════════════════════════════════════════════════ -->
+
+<!-- 106 Finance Office -->
+<rect x="275" y="778" width="110" height="90" rx="5" fill="#C4DCF5" stroke="#4A78B8" stroke-width="1.8"/>
+<rect x="275" y="778" width="110" height="22" rx="5" fill="#4A78B8"/>
+<text x="330" y="794" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">106</text>
+<text x="330" y="824" font-size="10" font-weight="600" fill="#1A4A80" text-anchor="middle">Finance Office</text>
+<text x="330" y="840" font-size="8.5" fill="#2A5A90" text-anchor="middle">Accounts</text>
+<line x1="330" y1="778" x2="330" y2="765" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 107 Training Room -->
+<rect x="485" y="778" width="110" height="90" rx="5" fill="#DCF0C4" stroke="#5A8A3A" stroke-width="1.8"/>
+<rect x="485" y="778" width="110" height="22" rx="5" fill="#5A8A3A"/>
+<text x="540" y="794" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">107</text>
+<text x="540" y="824" font-size="10" font-weight="600" fill="#1A5010" text-anchor="middle">Training Room</text>
+<text x="540" y="840" font-size="8.5" fill="#2A6020" text-anchor="middle">Classroom</text>
+<line x1="540" y1="778" x2="540" y2="765" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 108 Meeting Pod 1 -->
+<rect x="650" y="778" width="110" height="90" rx="5" fill="#C4F0D4" stroke="#3A8A5A" stroke-width="1.8"/>
+<rect x="650" y="778" width="110" height="22" rx="5" fill="#3A8A5A"/>
+<text x="705" y="794" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">108</text>
+<text x="705" y="824" font-size="10" font-weight="600" fill="#1A5A30" text-anchor="middle">Meeting Pod 1</text>
+<text x="705" y="840" font-size="8.5" fill="#2A6A40" text-anchor="middle">Small Meeting</text>
+<line x1="705" y1="778" x2="705" y2="765" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 109 Meeting Pod 2 -->
+<rect x="815" y="778" width="110" height="90" rx="5" fill="#C4F0D4" stroke="#3A8A5A" stroke-width="1.8"/>
+<rect x="815" y="778" width="110" height="22" rx="5" fill="#3A8A5A"/>
+<text x="870" y="794" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">109</text>
+<text x="870" y="824" font-size="10" font-weight="600" fill="#1A5A30" text-anchor="middle">Meeting Pod 2</text>
+<text x="870" y="840" font-size="8.5" fill="#2A6A40" text-anchor="middle">Small Meeting</text>
+<line x1="870" y1="778" x2="870" y2="765" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- 110 Open Workspace -->
+<rect x="1025" y="778" width="110" height="90" rx="5" fill="#E0ECFF" stroke="#5078C0" stroke-width="1.8"/>
+<rect x="1025" y="778" width="110" height="22" rx="5" fill="#5078C0"/>
+<text x="1080" y="794" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">110</text>
+<text x="1080" y="824" font-size="10" font-weight="600" fill="#1A3880" text-anchor="middle">Open Workspace</text>
+<text x="1080" y="840" font-size="8.5" fill="#2A4890" text-anchor="middle">Hot Desks</text>
+<line x1="1080" y1="778" x2="1080" y2="765" stroke="#98B8D0" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+<!-- ══ ZONE LABELS ════════════════════════════════════════════════════════ -->
+<text x="705" y="68" font-size="9" fill="#6880A0" text-anchor="middle" font-style="italic">— North Wing —</text>
+<text x="705" y="772" font-size="9" fill="#6880A0" text-anchor="middle" font-style="italic">— South Wing —</text>
+
+<!-- Room divider lines -->
+<line x1="385" y1="90" x2="385" y2="200" stroke="#A0C0D8" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="595" y1="90" x2="595" y2="200" stroke="#A0C0D8" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="760" y1="90" x2="760" y2="200" stroke="#A0C0D8" stroke-width="1" stroke-dasharray="3,3"/>
+<line x1="925" y1="90" x2="925" y2="200" stroke="#A0C0D8" stroke-width="1" stroke-dasharray="3,3"/>
+
+<!-- ══ WINDOW INDICATORS ══════════════════════════════════════════════════ -->
+<rect x="305" y="46" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="520" y="46" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="685" y="46" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="850" y="46" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="1060" y="46" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="305" y="869" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="520" y="869" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="685" y="869" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="850" y="869" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+<rect x="1060" y="869" width="50" height="6" rx="2" fill="#A8E8F8" opacity="0.7"/>
+
+<!-- ══ FLOOR TITLE ═══════════════════════════════════════════════════════ -->
+<text x="90" y="28" font-size="14" font-weight="800" fill="#1A2535">FIRST FLOOR</text>
+<text x="90" y="43" font-size="9.5" fill="#5A7090">Adhvar Innovation Center  ·  Level 1</text>
+
+<!-- ══ LEGEND ════════════════════════════════════════════════════════════ -->
+<rect x="1215" y="340" width="120" height="130" rx="5" fill="#E4EDF5" stroke="#A0B8D0" stroke-width="1.2" opacity="0.95"/>
+<text x="1275" y="358" font-size="9" font-weight="700" fill="#2A3A4A" text-anchor="middle">LEGEND</text>
+<rect x="1223" y="365" width="14" height="10" rx="2" fill="#B3D4FC" stroke="#3E7CB1" stroke-width="1"/>
+<text x="1243" y="374" font-size="8" fill="#2A3A4A">Lift</text>
+<rect x="1223" y="381" width="14" height="10" rx="2" fill="#FFCDB2" stroke="#B5563A" stroke-width="1"/>
+<text x="1243" y="390" font-size="8" fill="#2A3A4A">Staircase</text>
+<rect x="1223" y="397" width="14" height="10" rx="2" fill="#C9E4CA" stroke="#4E8B5C" stroke-width="1"/>
+<text x="1243" y="406" font-size="8" fill="#2A3A4A">Washroom</text>
+<rect x="1223" y="413" width="14" height="10" rx="2" fill="#F7B2B2" stroke="#B23A3A" stroke-width="1"/>
+<text x="1243" y="422" font-size="8" fill="#2A3A4A">Exit</text>
+<rect x="1223" y="429" width="14" height="10" rx="2" fill="#B0C4D8"/>
+<text x="1243" y="438" font-size="8" fill="#2A3A4A">Corridor</text>
+<rect x="1223" y="445" width="14" height="10" rx="2" fill="#C4F0D4" stroke="#3A8A5A" stroke-width="1"/>
+<text x="1243" y="454" font-size="8" fill="#2A3A4A">Meeting Room</text>
+<rect x="1223" y="461" width="14" height="10" rx="2" fill="#C4DCF5" stroke="#4A78B8" stroke-width="1"/>
+<text x="1243" y="470" font-size="8" fill="#2A3A4A">Office</text>
+
+</svg>
