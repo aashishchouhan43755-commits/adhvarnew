@@ -6,12 +6,15 @@ from app.api.router import api_router
 app = FastAPI(
     title="Adhvar API",
     version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
 )
 
-# CORS (Flutter Web)
+# CORS (Flutter Web & Mobile)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change to your frontend URL in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
