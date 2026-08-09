@@ -10,11 +10,15 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    # Safely truncate to 72 bytes to prevent bcrypt 72-byte exception
+    safe_pwd = plain_password[:72]
+    return pwd_context.verify(safe_pwd, hashed_password)
 
 
 def get_password_hash(password: str) -> str:
-    return pwd_context.hash(password)
+    # Safely truncate to 72 bytes to prevent bcrypt 72-byte exception
+    safe_pwd = password[:72]
+    return pwd_context.hash(safe_pwd)
 
 
 def create_access_token(subject: Any, expires_delta: timedelta | None = None) -> str:
