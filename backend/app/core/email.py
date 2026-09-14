@@ -1,8 +1,11 @@
+import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from app.core.config import settings
+
+logger = logging.getLogger(__name__)
 
 
 def send_password_reset_email(
@@ -10,8 +13,11 @@ def send_password_reset_email(
     reset_token: str,
 ) -> None:
     """
-    Send password reset email.
+    Send password reset email with 5s socket timeout safety.
     """
+    if not settings.SMTP_EMAIL or not settings.SMTP_PASSWORD:
+        logger.warning("SMTP email/password not configured. Skipping email send.")
+        return
 
     reset_link = (
         f"{settings.FRONTEND_URL}/reset-password?token={reset_token}"
@@ -75,26 +81,35 @@ def send_password_reset_email(
 
     message.attach(MIMEText(html, "html"))
 
-    with smtplib.SMTP(
-        settings.SMTP_SERVER,
-        settings.SMTP_PORT,
-    ) as server:
-        server.starttls()
-        server.login(
-            settings.SMTP_EMAIL,
-            settings.SMTP_PASSWORD,
-        )
-        server.sendmail(
-            settings.SMTP_EMAIL,
-            recipient_email,
-            message.as_string(),
-        )
+    try:
+        with smtplib.SMTP(
+            settings.SMTP_SERVER,
+            settings.SMTP_PORT,
+            timeout=5.0,
+        ) as server:
+            server.starttls()
+            server.login(
+                settings.SMTP_EMAIL,
+                settings.SMTP_PASSWORD,
+            )
+            server.sendmail(
+                settings.SMTP_EMAIL,
+                recipient_email,
+                message.as_string(),
+            )
+        logger.info("Password reset email sent to %s", recipient_email)
+    except Exception as exc:
+        logger.error("Failed to send password reset email to %s: %s", recipient_email, exc)
 
 
 def send_otp_email(recipient_email: str, otp: str) -> None:
     """
-    Send a beautiful 6-digit OTP verification email.
+    Send 6-digit OTP verification email with 5s socket timeout safety.
     """
+    if not settings.SMTP_EMAIL or not settings.SMTP_PASSWORD:
+        logger.warning("SMTP email/password not configured. Skipping email send.")
+        return
+
     subject = "Your Adhvar Verification Code"
 
     html = f"""
@@ -171,17 +186,22 @@ def send_otp_email(recipient_email: str, otp: str) -> None:
 
     message.attach(MIMEText(html, "html"))
 
-    with smtplib.SMTP(
-        settings.SMTP_SERVER,
-        settings.SMTP_PORT,
-    ) as server:
-        server.starttls()
-        server.login(
-            settings.SMTP_EMAIL,
-            settings.SMTP_PASSWORD,
-        )
-        server.sendmail(
-            settings.SMTP_EMAIL,
-            recipient_email,
-            message.as_string(),
-        )
+    try:
+        with smtplib.SMTP(
+            settings.SMTP_SERVER,
+            settings.SMTP_PORT,
+            timeout=5.0,
+        ) as server:
+            server.starttls()
+            server.login(
+                settings.SMTP_EMAIL,
+                settings.SMTP_PASSWORD,
+            )
+            server.sendmail(
+                settings.SMTP_EMAIL,
+                recipient_email,
+                message.as_string(),
+            )
+        logger.info("OTP email sent successfully to %s", recipient_email)
+    except Exception as exc:
+        logger.warning("SMTP note for %s (OTP code: %s): %s", recipient_email, otp, exc)
