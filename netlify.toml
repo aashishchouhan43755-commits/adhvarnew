@@ -1,0 +1,10 @@
+# Netlify configuration for Adhvar Flutter Web application
+
+[build]
+  base = "frontend"
+  publish = "build/web"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

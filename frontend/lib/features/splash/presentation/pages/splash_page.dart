@@ -16,8 +16,13 @@ class _SplashPageState extends ConsumerState<SplashPage> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () async {
       if (!mounted) return;
+      final hasToken = await ref.read(authRepositoryProvider).isLoggedIn();
+      if (hasToken) {
+        await ref.read(authProvider.notifier).loadUser();
+      }
+
 
       final authState = ref.read(authProvider);
       final isLoggedIn = authState.asData?.value != null;

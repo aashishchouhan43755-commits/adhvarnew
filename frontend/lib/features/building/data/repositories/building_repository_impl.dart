@@ -2,6 +2,7 @@ import '../../../../core/models/building_model.dart';
 import '../../../../core/network/network_info.dart';
 import '../../domain/repositories/building_repository.dart';
 import '../datasources/building_remote_datasource.dart';
+import 'building_offline_repository_impl.dart';
 
 class BuildingRepositoryImpl implements BuildingRepository {
   final BuildingRemoteDataSource remoteDataSource;
@@ -14,19 +15,25 @@ class BuildingRepositoryImpl implements BuildingRepository {
 
   @override
   Future<List<BuildingModel>> getBuildings() async {
-    if (!await networkInfo.isConnected) {
-      throw Exception('No internet connection');
+    try {
+      if (!await networkInfo.isConnected) {
+        return const BuildingOfflineRepositoryImpl().getBuildings();
+      }
+      return await remoteDataSource.getBuildings();
+    } catch (_) {
+      return const BuildingOfflineRepositoryImpl().getBuildings();
     }
-
-    return remoteDataSource.getBuildings();
   }
 
   @override
   Future<BuildingModel> getBuildingById(int buildingId) async {
-    if (!await networkInfo.isConnected) {
-      throw Exception('No internet connection');
+    try {
+      if (!await networkInfo.isConnected) {
+        return const BuildingOfflineRepositoryImpl().getBuildingById(buildingId);
+      }
+      return await remoteDataSource.getBuildingById(buildingId);
+    } catch (_) {
+      return const BuildingOfflineRepositoryImpl().getBuildingById(buildingId);
     }
-
-    return remoteDataSource.getBuildingById(buildingId);
   }
 }

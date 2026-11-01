@@ -171,6 +171,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                 if (v == null || v.trim().isEmpty) {
                                   return 'Please enter your email';
                                 }
+                                final clean = v.trim().toLowerCase();
+                                if (clean == 'demo' || clean == 'admin' || clean == 'test') {
+                                  return null;
+                                }
                                 if (!v.contains('@')) {
                                   return 'Enter a valid email address';
                                 }
